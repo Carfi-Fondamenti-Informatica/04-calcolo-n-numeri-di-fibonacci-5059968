@@ -1,22 +1,23 @@
 #include <iostream>
 using namespace std;
+int main () {
+    int i;
+    int n=0;
+    int primo=1;
+    int secondo=1;
+    int terzo=0;
+    cin>>n;
+    if(n>=2){
+    cout<<primo<<endl;
+    cout<<secondo<<endl;
 
-int main() {
-    int t1 = 1, t2 = 1, t3=0, n;
-
-    cin >> n;
-    cout<<t1 <<endl;
-    cout<< t2 <<endl;
-
-    t3 = t1 + t2;
-    if (n>=2) {
-        while (t3 <= n) {
-            cout << t3 << endl;
-            t1 = t2;
-            t2 = t3;
-            t3 = t1 + t2;
-        }
-    } else{
+    for(i=2;i<n;i++){
+        terzo=primo+secondo;
+        primo=secondo;
+        secondo=terzo;
+        cout<<terzo<<endl;
+    }
+    } else {
         cout<<"errore"<<endl;
     }
     return 0;
